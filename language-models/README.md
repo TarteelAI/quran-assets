@@ -13,7 +13,7 @@ cmake ..
 make -j $(nproc)
 ```
 
-The binaries will be in the `build/bin` file.
+The binaries will be in the `build/bin` directory.
 
 ### Creating the LM
 
@@ -22,3 +22,5 @@ Example of a 4-gram model
 ```sh
 lmplz --order 4 --text ../text/vocab-UD.txt --arpa 4-gram-UD-lm.arpa
 ```
+
+You can also use the helper script [`scripts/generate_lm.py`](../scripts/generate_lm.py).
