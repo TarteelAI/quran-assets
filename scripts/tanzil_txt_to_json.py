@@ -19,6 +19,8 @@ def tanzil_txt_to_json_lists(tanzil_txt_path: str):
 
             if surah_num > 1 and ayah_num == 1:
                 text = text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ ", "")
+                # Missing shadda for a couple ayahs
+                text = text.replace("بِّسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ ", "")
 
             if surah_num > len(tanzil_list):
                 tanzil_list.append([])
@@ -40,6 +42,8 @@ def tanzil_txt_to_json_objects(tanzil_txt_path: str):
 
             if surah_num > 1 and ayah_num == 1:
                 text = text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ ", "")
+                # Missing shadda for a couple ayahs
+                text = text.replace("بِّسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ ", "")
 
             if surah_num not in tanzil_json:
                 tanzil_json[surah_num] = {}
