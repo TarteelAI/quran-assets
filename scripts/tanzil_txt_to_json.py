@@ -51,7 +51,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input", type=str, help="Path to the Tanzil text file")
     parser.add_argument("-o", "--output", default="./quran-uthmani.json", type=str, help="Path to output file")
-    parser.add_argument("-f", "--format", default="o", type=str, help="Format Quran as list (l) or object (o")
+    parser.add_argument("-f", "--format", default="o", type=str, help="Format Quran as list (l) or object (o)")
     args = parser.parse_args()
 
     print(f"Generating JSON from {args.input}")
