@@ -24,7 +24,7 @@ try {
     }
     await writeFile(
       `./pages/${pageNumber}.json`,
-      JSON.stringify(uthmaniPage),
+      JSON.stringify(uthmaniPage, null, 2),
       "utf8"
     );
   }
