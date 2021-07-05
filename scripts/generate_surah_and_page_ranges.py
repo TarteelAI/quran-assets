@@ -1,27 +1,32 @@
 import json
 import os
 
-dirname = os.path.dirname(__file__)
-metadata_dir = os.path.join(dirname, '../metadata')
 
-with open(f'{metadata_dir}/ayah-count-per-surah-map.json', 'r') as f:
-    data = json.load(f)
+def main():
+    dirname = os.path.dirname(__file__)
+    metadata_dir = os.path.join(dirname, '../metadata')
 
-surah_keys = []
-for key, val in data.items():
-    surah_keys.append(f"{key}:1-{key}:{val}")
+    with open(f'{metadata_dir}/ayah-count-per-surah-map.json', 'r') as f:
+        data = json.load(f)
 
-print(surah_keys)
+    surah_keys = []
+    for key, val in data.items():
+        surah_keys.append(f"{key}:1-{key}:{val}")
+
+    print(surah_keys)
+
+    with open(f'{metadata_dir}/page-indices-lookup.json', 'r') as f:
+        data = json.load(f)
+
+    page_keys = []
+    for page in data:
+        page_keys.append(f'{page["start"]["surah"]}:{page["start"]["ayah"]}-{page["end"]["surah"]}:{page["end"]["ayah"]}')
+
+    print(page_keys)
 
 
-with open(f'{metadata_dir}/page-indices-lookup.json', 'r') as f:
-    data = json.load(f)
-
-page_keys = []
-for page in data:
-    page_keys.append(f'{page["start"]["surah"]}:{page["start"]["ayah"]}-{page["end"]["surah"]}:{page["end"]["ayah"]}')
-
-print(page_keys)
+if __name__ == "__main__":
+    main()
 
 
 # Generates the following
