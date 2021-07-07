@@ -38,6 +38,7 @@ class QuranEncTranslationScraper(Spider):
                 curr_surah = int(row[1])
                 curr_ayahs = []
             curr_ayahs.append(row[3])
+        json_data.append(curr_ayahs)
 
         json_path = Path(self.settings.get('output')).absolute() / filename
         with open(json_path, "w", encoding='utf-8') as json_file:
@@ -45,15 +46,14 @@ class QuranEncTranslationScraper(Spider):
 
     def parse(self, response, **kwargs):
         for link in LinkExtractor(allow=self.download_urls).extract_links(response):
-            if link.url == "https://quranenc.com/en/home/download/csv/urdu_junagarhi":
-                response = requests.get(link.url)
-                self._process_response(response)
+            response = requests.get(link.url)
+            self._process_response(response)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Scrape QuranEnc Translations.')
     parser.add_argument(
-        '-o', '--output', type=str, default="./quranenc-translations", help='Output directory for JSON files.'
+        '-o', '--output', type=str, default="./translations/quranenc", help='Output directory for JSON files.'
     )
     args = parser.parse_args()
 
