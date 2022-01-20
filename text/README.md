@@ -20,7 +20,7 @@ Generated from [`scripts/generate_alphabet.py`](../scripts/generate_alphabet.py)
 ## Files
 
 * `quran-uthmani.txt`: Quran "Uthmani" text with pause, sajdah, rub, and tatweel from tanzil.net. Version 1.1 released February 12, 2021.
-
+* `quran-simple-clean.txt`: Quran "Imlaei" text without pause, sajdah, rub, tashkil, or tatweel from tanzil.net. Version 1.1 released February 12, 2021.
 
 ## Licenses
 
