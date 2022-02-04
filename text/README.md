@@ -7,9 +7,21 @@
 
 ## Vocabulary
 
-`vocab-<shortcode>.txt`: Unique words in the Quran.
+`vocab-<shortcode>.txt`: All sentences in the Quran.
 
 Generated from [`scripts/generate_vocab_file.py`](../scripts/generate_vocab_file.py).
+
+## Words
+
+`words-<shortcode>.txt`: All words in the Quran.
+`words-<shortcode>-filtered.txt`: All words in the Quran.
+
+Generated using 
+
+```sh
+for word in $(cat vocab-<shortcode>.txt); do echo "$word" >> words-<shortcode>.txt; done
+sort words-<shortcode>.txt | uniq -u > words-<shortcode>-filtered.txt
+```
 
 ## Alphabets
 
