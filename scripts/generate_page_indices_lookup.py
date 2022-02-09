@@ -14,7 +14,7 @@ def main():
         lookup_list.append(
             {
                 "juz": page_info["juz"],
-                "hizb": page_info["hizb"],
+                "rub": page_info["hizb"],
                 "start": {
                     "surah": page_info["surahs"][0]["surahNum"],
                     "ayah": page_info["surahs"][0]["ayahs"][0]["ayahNum"]
