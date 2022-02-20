@@ -7,7 +7,7 @@ import json
 import os
 import requests
 
-file_path = '../audio/mishari-manifest.json'
+file_path = '../audio/alafasy-ayah-manifest.json'
 
 def main():
     dirname = os.path.dirname(__file__)
